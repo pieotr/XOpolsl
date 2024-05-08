@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+
 public class GameStateController : MonoBehaviour
 {
     [Header("TitleBar References")]
@@ -24,6 +25,7 @@ public class GameStateController : MonoBehaviour
     public Color activePlayerColor;       // Color for active player icon
     public string whoPlaysFirst;          // Indicates who plays first, 'X' or 'O'
 
+    //[Header("Private Variables")]
     public string playerTurn;            // Current player's turn
     private string player1Name;           // Display name for player 1
     private string player2Name;           // Display name for player 2
@@ -58,7 +60,7 @@ public class GameStateController : MonoBehaviour
         CheckWinConditions();
 
         // If no win, change turn
-        if (moveCount < 9 && endGameState.active == false)
+        if (moveCount < 9 && endGameState.activeSelf == false)
         {
             ChangeTurn();
         }
