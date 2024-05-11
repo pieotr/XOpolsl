@@ -48,8 +48,13 @@ public class GameStateController : MonoBehaviour
     private void UpdatePlayerIcons()
     {
         // Set player icon colors based on current turn
-        playerXIcon.color = playerTurn == "X" ? activePlayerColor : inactivePlayerColor;
-        playerOIcon.color = playerTurn == "O" ? activePlayerColor : inactivePlayerColor;
+
+        if (playerTurn == "X") playerOIcon.color = inactivePlayerColor;
+        else playerXIcon.color = inactivePlayerColor;
+
+
+        //playerXIcon.color = playerTurn == "X" ? activePlayerColor : inactivePlayerColor;
+        //playerOIcon.color = playerTurn == "O" ? activePlayerColor : inactivePlayerColor;
     }
 
     public void EndTurn()

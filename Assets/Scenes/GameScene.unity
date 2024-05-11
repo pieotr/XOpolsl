@@ -173,9 +173,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 49436704}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89d73ec09ac32824083abbd9a912ab7f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c2d24689f78a674a9fd0889ec5057ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameController: {fileID: 1635605098}
+  interactiveButton: {fileID: 49436707}
+  internalText: {fileID: 1253902863}
 --- !u!114 &49436707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +224,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 49436706}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: TileController, Assembly-CSharp
         m_MethodName: UpdateTile
         m_Mode: 1
         m_Arguments:
@@ -417,7 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c2d24689f78a674a9fd0889ec5057ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameController: {fileID: 0}
+  gameController: {fileID: 1635605098}
   interactiveButton: {fileID: 103132075}
   internalText: {fileID: 874360305}
 --- !u!1 &112192680
@@ -758,7 +761,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1635605098}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: GameStateController, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
@@ -789,7 +792,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 95664783d73adcb4f8d4216a87c109f8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d9c81a2a9f9c66944a4318058b9c3ffb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -895,9 +898,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 333136166}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89d73ec09ac32824083abbd9a912ab7f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c2d24689f78a674a9fd0889ec5057ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameController: {fileID: 1635605098}
+  interactiveButton: {fileID: 333136169}
+  internalText: {fileID: 1127044479}
 --- !u!114 &333136169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1833,7 +1839,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bdacbf1dd060b3644848590114af28c1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7522637501b0d17408b853b0ae8f8197, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1981,9 +1987,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 959333881}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89d73ec09ac32824083abbd9a912ab7f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c2d24689f78a674a9fd0889ec5057ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameController: {fileID: 1635605098}
+  interactiveButton: {fileID: 959333884}
+  internalText: {fileID: 933893980}
 --- !u!114 &959333884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2128,9 +2137,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1089604244}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89d73ec09ac32824083abbd9a912ab7f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c2d24689f78a674a9fd0889ec5057ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameController: {fileID: 1635605098}
+  interactiveButton: {fileID: 1089604247}
+  internalText: {fileID: 1390002520}
 --- !u!114 &1089604247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2275,9 +2287,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1094344817}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89d73ec09ac32824083abbd9a912ab7f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c2d24689f78a674a9fd0889ec5057ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameController: {fileID: 1635605098}
+  interactiveButton: {fileID: 1094344820}
+  internalText: {fileID: 355818124}
 --- !u!114 &1094344820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3011,9 +3026,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1608707238}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89d73ec09ac32824083abbd9a912ab7f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c2d24689f78a674a9fd0889ec5057ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameController: {fileID: 1635605098}
+  interactiveButton: {fileID: 1608707241}
+  internalText: {fileID: 185226936}
 --- !u!114 &1608707241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3161,11 +3179,20 @@ MonoBehaviour:
   tilePlayerO: {fileID: 21300000, guid: bdb6155d2224a014280a3507b958cdb3, type: 3}
   tilePlayerX: {fileID: 21300000, guid: bc72a56618044ce4da8826520299044e, type: 3}
   tileEmpty: {fileID: 21300000, guid: 335fd06e07cbfae4e96e9aa95605d64a, type: 3}
-  tileList: []
-  inactivePlayerColor: {r: 0.5471698, g: 0.5136169, b: 0.5136169, a: 0}
-  activePlayerColor: {r: 0.9622642, g: 0.9304913, b: 0.9304913, a: 0}
-  whoPlaysFirst: 
-  playerTurn: 
+  tileList:
+  - {fileID: 874360305}
+  - {fileID: 735933376}
+  - {fileID: 1253902863}
+  - {fileID: 1127044479}
+  - {fileID: 185226936}
+  - {fileID: 1390002520}
+  - {fileID: 651014093}
+  - {fileID: 355818124}
+  - {fileID: 933893980}
+  inactivePlayerColor: {r: 0.7686275, g: 0.7686275, b: 0.7686275, a: 0}
+  activePlayerColor: {r: 1, g: 1, b: 1, a: 0}
+  whoPlaysFirst: X
+  playerTurn: X
 --- !u!1 &1648809362
 GameObject:
   m_ObjectHideFlags: 0
@@ -3216,9 +3243,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1648809362}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89d73ec09ac32824083abbd9a912ab7f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c2d24689f78a674a9fd0889ec5057ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameController: {fileID: 1635605098}
+  interactiveButton: {fileID: 1648809365}
+  internalText: {fileID: 735933376}
 --- !u!114 &1648809365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3264,7 +3294,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1648809364}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: TileController, Assembly-CSharp
         m_MethodName: UpdateTile
         m_Mode: 1
         m_Arguments:
@@ -3464,9 +3494,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1837573990}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89d73ec09ac32824083abbd9a912ab7f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c2d24689f78a674a9fd0889ec5057ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameController: {fileID: 1635605098}
+  interactiveButton: {fileID: 1837573993}
+  internalText: {fileID: 651014093}
 --- !u!114 &1837573993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3604,7 +3637,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000015258789, y: 0}
+  m_AnchoredPosition: {x: -0.000015259, y: 0}
   m_SizeDelta: {x: 611.8, y: 616.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2132204907
