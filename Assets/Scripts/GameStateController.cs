@@ -25,8 +25,8 @@ public class GameStateController : MonoBehaviour
     public Color activePlayerColor;       // Color for active player icon
     public string whoPlaysFirst;          // Indicates who plays first, 'X' or 'O'
 
-    //[Header("Private Variables")]
-    public string playerTurn;            // Current player's turn
+    [Header("Private Variables")]
+    private string playerTurn;            // Current player's turn
     private string player1Name;           // Display name for player 1
     private string player2Name;           // Display name for player 2
     private int moveCount;                // Count of moves made
@@ -34,28 +34,41 @@ public class GameStateController : MonoBehaviour
     private void Start()
     {
         playerTurn = whoPlaysFirst;       // Initialize who plays first
-        UpdatePlayerIcons();              // Update player icons based on who plays first
-
-        // Set player names from input fields
-        player1Name = player1InputField.text;
-        player2Name = player2InputField.text;
+        
+        //UpdatePlayerIcons();              // Update player icons based on who plays first
+        if (playerTurn == "X") playerOIcon.color = inactivePlayerColor;
+        else playerXIcon.color = inactivePlayerColor;
+        
 
         // Add listeners for name changes
         player1InputField.onValueChanged.AddListener(delegate { OnPlayerNameChanged(ref player1Name, player1InputField.text); });
         player2InputField.onValueChanged.AddListener(delegate { OnPlayerNameChanged(ref player2Name, player2InputField.text); });
-    }
 
+        // Set player names from input fields
+        player1Name = player1InputField.text;
+        player2Name = player2InputField.text;
+    }
+    
     private void UpdatePlayerIcons()
     {
         // Set player icon colors based on current turn
+        
+        if (playerTurn == "X") 
+        {
 
-        if (playerTurn == "X") playerOIcon.color = inactivePlayerColor;
-        else playerXIcon.color = inactivePlayerColor;
+            playerOIcon.color = inactivePlayerColor;
+            playerXIcon.color = activePlayerColor;
+        }   
+        else
+        {
+            playerXIcon.color = inactivePlayerColor;
+            playerOIcon.color = activePlayerColor;
+        } 
+        
 
-
-        //playerXIcon.color = playerTurn == "X" ? activePlayerColor : inactivePlayerColor;
-        //playerOIcon.color = playerTurn == "O" ? activePlayerColor : inactivePlayerColor;
+        
     }
+    
 
     public void EndTurn()
     {
@@ -94,8 +107,24 @@ public class GameStateController : MonoBehaviour
 
     private void ChangeTurn()
     {
-        playerTurn = playerTurn == "X" ? "O" : "X"; // Toggle player turn
+        //playerTurn = playerTurn == "X" ? "O" : "X"; // Toggle player turn
+
+        
+        if(playerTurn == "X")
+        {
+            playerTurn = "O";
+        }
+        else
+        {
+            playerTurn = "X";
+        }
         UpdatePlayerIcons(); // Update UI icons to reflect the change
+        
+       
+        
+
+
+
     }
 
     private void GameOver(string winningPlayer)
