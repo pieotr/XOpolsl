@@ -34,11 +34,11 @@ public class GameStateController : MonoBehaviour
     private void Start()
     {
         playerTurn = whoPlaysFirst;       // Initialize who plays first
-        
+
         //UpdatePlayerIcons();              // Update player icons based on who plays first
         if (playerTurn == "X") playerOIcon.color = inactivePlayerColor;
         else playerXIcon.color = inactivePlayerColor;
-        
+
 
         // Add listeners for name changes
         player1InputField.onValueChanged.AddListener(delegate { OnPlayerNameChanged(ref player1Name, player1InputField.text); });
@@ -48,27 +48,27 @@ public class GameStateController : MonoBehaviour
         player1Name = player1InputField.text;
         player2Name = player2InputField.text;
     }
-    
+
     private void UpdatePlayerIcons()
     {
         // Set player icon colors based on current turn
-        
-        if (playerTurn == "X") 
+
+        if (playerTurn == "X")
         {
 
             playerOIcon.color = inactivePlayerColor;
             playerXIcon.color = activePlayerColor;
-        }   
+        }
         else
         {
             playerXIcon.color = inactivePlayerColor;
             playerOIcon.color = activePlayerColor;
-        } 
-        
+        }
 
-        
+
+
     }
-    
+
 
     public void EndTurn()
     {
@@ -99,6 +99,11 @@ public class GameStateController : MonoBehaviour
         }
     }
 
+    private bool CheckLineSingle(int index)
+    {
+        return tileList[index].text == playerTurn;
+    }
+
     private bool CheckLine(int a, int b, int c)
     {
         // Returns true if all tiles in a line are owned by the current player
@@ -109,8 +114,8 @@ public class GameStateController : MonoBehaviour
     {
         //playerTurn = playerTurn == "X" ? "O" : "X"; // Toggle player turn
 
-        
-        if(playerTurn == "X")
+
+        if (playerTurn == "X")
         {
             playerTurn = "O";
         }
@@ -119,9 +124,9 @@ public class GameStateController : MonoBehaviour
             playerTurn = "X";
         }
         UpdatePlayerIcons(); // Update UI icons to reflect the change
-        
-       
-        
+
+
+
 
 
 
@@ -130,6 +135,7 @@ public class GameStateController : MonoBehaviour
     private void GameOver(string winningPlayer)
     {
         // Set the winner text based on the game outcome
+        // POPRAWIĆ CZYTELNOŚĆ
         winnerText.text = winningPlayer == "D" ? "DRAW" : (winningPlayer == "X" ? player1Name : player2Name);
         endGameState.SetActive(true); // Show end game UI
         ToggleButtonState(false); // Disable all buttons
@@ -167,14 +173,14 @@ public class GameStateController : MonoBehaviour
 
 
 
-   
 
-     public string GetPlayersTurn()    // Returns the current player's turn (X or O).
+
+    public string GetPlayersTurn()    // Returns the current player's turn (X or O).
     {
         return playerTurn;
     }
 
- 
+
 
     public Sprite GetPlayerSprite()    // Returns the sprite corresponding to the current player's turn.
     {
