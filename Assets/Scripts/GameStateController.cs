@@ -107,7 +107,7 @@ public class GameStateController : MonoBehaviour
     private bool CheckLine(int a, int b, int c)
     {
         // Returns true if all tiles in a line are owned by the current player
-        return tileList[a].text == playerTurn && tileList[b].text == playerTurn && tileList[c].text == playerTurn;
+        return CheckLineSingle(a) && CheckLineSingle(b) && CheckLineSingle(c);
     }
 
     private void ChangeTurn()
@@ -136,10 +136,48 @@ public class GameStateController : MonoBehaviour
     {
         // Set the winner text based on the game outcome
         // POPRAWIĆ CZYTELNOŚĆ
-        winnerText.text = winningPlayer == "D" ? "DRAW" : (winningPlayer == "X" ? player1Name : player2Name);
+
+
+
+        // Determine the winner and set the winnerText accordingly
+        if (winningPlayer == "D")
+        {
+            // If the game is a draw, set the winnerText to "DRAW"
+            winnerText.text = "DRAW";
+        }
+        else
+        {
+            // If the game is not a draw, check the winningPlayer
+            if (winningPlayer == "X")
+            {
+                // If player "X" is the winner, set the winnerText to player1Name 
+                winnerText.text = player1Name;
+                //set new game starting player as winnign player
+                SetNewStartingPlayer("X");
+            }
+            else
+            {
+                // If player "O" is the winner, set the winnerText to player2Name
+                winnerText.text = player2Name;
+                //set new game starting player as winnign player
+                SetNewStartingPlayer("O");
+            }
+        }
+
+
+
+
+
         endGameState.SetActive(true); // Show end game UI
         ToggleButtonState(false); // Disable all buttons
     }
+
+    public void SetNewStartingPlayer(string win)
+    {
+        whoPlaysFirst = win; //set starting player as winning player
+    }
+
+
 
     public void RestartGame()
     {
