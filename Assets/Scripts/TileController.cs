@@ -1,16 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+/// \class TileController
+/// \brief Manages the state of an individual tile in a Tic-Tac-Toe game.
 public class TileController : MonoBehaviour
 {
     [Header("Component References")]
-    public GameStateController gameController;    // Reference to the game state controller
-    public Button interactiveButton;               // The interactive button component of this tile
-    public Text internalText;                      // The Text component displaying the player's mark (X or O)
+    public GameStateController gameController;    ///< Reference to the game state controller
+    public Button interactiveButton;              ///< The interactive button component of this tile
+    public Text internalText;                     ///< The Text component displaying the player's mark (X or O)
 
-
-
-    public void UpdateTile()    // Called every time the tile is clicked. Updates the tile's state based on the current player's turn.
+    /// \brief Updates the tile's state based on the current player's turn.
+    /// \details Called every time the tile is clicked.
+    public void UpdateTile()
     {
         // Update the tile with the current player's symbol and sprite
         internalText.text = gameController.GetPlayersTurn();
@@ -23,8 +25,8 @@ public class TileController : MonoBehaviour
         gameController.EndTurn();
     }
 
-
-    public void ResetTile()    // Resets the tile to its initial state.
+    /// \brief Resets the tile to its initial state.
+    public void ResetTile()
     {
         // Clear the text and reset the sprite to the empty tile sprite
         internalText.text = "";
